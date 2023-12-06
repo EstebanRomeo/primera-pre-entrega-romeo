@@ -1,44 +1,36 @@
-import React from 'react'
 import './productContainer.css';
+import React, { useEffect, useState } from 'react';
+import data from './product.json'; 
 
+const Productos = ({ selectedCategory }) => {
+  const [productos, setProductos] = useState([]);
 
+  useEffect(() => {
+    const fetchProductos = () => {
+      try {
+        const filteredProductos = selectedCategory
+          ? data.filter(producto => producto.categoria === selectedCategory)
+          : data;
 
-const Productos = (props) => {
+        setProductos(filteredProductos);
+      } catch (error) {
+        console.error('Error al obtener productos:', error);
+      }
+    };
+
+    fetchProductos();
+  }, [selectedCategory]);
 
   return (
     <div>
-    <section className='product-section'>
-    <h1 className='product-title'> Nuestras pizzas: </h1>
-    <div className='product-container'>
-        {props.children}
+      <h2>{selectedCategory ? `Productos de ${selectedCategory}` : 'Todos los productos'}</h2>
+      {productos.map(producto => (
+        <div key={producto.id}>
+          {/* ... código del producto ... */}
+        </div>
+      ))}
     </div>
+  );
+};
 
-</section>
-
-
-
-
-<ProductContainer>
-      {data.map( product => 
-        <Product
-          key={product.nombre}
-          name={product.nombre}
-          ingred={product.ingredientes}
-          price={product.precio}
-
-        />
-      )}
-
-
-
-      
-    </ProductContainer>
-    
-</div>
-  )
-
-
-  
-}
-
-export default Productos
+export default Productos;

@@ -1,6 +1,7 @@
 import React from 'react'
 import BtnAddCart from './BtnAddCart'
 import './product.css';
+import BtnVerMas from './BtnVerMas';
 
 const Product = (props) => {
   return (
@@ -11,7 +12,7 @@ const Product = (props) => {
             <p className='product-ingred'>{props.ingred}</p>
             <p className='price'>${props.price}</p>
         </div>
-        <BtnAddCart />
+        <BtnVerMas />
     </div>
   )
 }

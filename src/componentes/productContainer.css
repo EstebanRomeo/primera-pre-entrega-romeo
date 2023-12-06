@@ -1,6 +1,8 @@
 .product-section{
-    background-color: darkolivegreen;
-    width: 740px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(116, 41, 41);
+    width: 1040px;
     margin: 30px auto;
     padding: 24px;
     min-height: 400px;

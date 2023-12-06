@@ -1,0 +1,20 @@
+.Product{
+    background-color: cadetblue;
+    width: 220px;
+    padding: 20px 16px;
+    border-radius: 12px;
+}
+.product-img{
+    border-radius: 12px;
+    display:block;
+    margin:auto;
+}
+.product-title{
+    margin-top: 40px;
+}
+.product-ingred{
+    font-size: 12px;
+}
+.price{
+    font-weight: bold;
+}
